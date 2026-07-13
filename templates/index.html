@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Jha | AI-Powered Personal Portfolio</title>
+    <meta name="description" content="Personal Portfolio website of Prince Jha, Computer Engineering student at TCET Mumbai, featuring an integrated AI Chatbot powered by Google Gemini API.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="glass-bg"></div>
+    <div class="glow-dots"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- Main Navigation -->
+    <header class="app-header">
+        <div class="logo-area">
+            <a href="#" class="logo-text">
+                <h2>PJ<span>.</span></h2>
+            </a>
+        </div>
+        <nav class="nav-menu">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#achievements" class="nav-link">Achievements</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <div class="backend-badge" id="backend-status-badge">
+                <span class="badge-dot"></span>
+                <span id="backend-status-text">Server Status</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="portfolio-container">
+        
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-content">
+                <div class="hero-tag">Welcome to my space</div>
+                <h1 class="hero-title">Prince Jha</h1>
+                <div class="hero-subtitles">
+                    <span class="subtitle-item">Computer Engineering Student</span>
+                    <span class="subtitle-separator">•</span>
+                    <span class="subtitle-item">Full Stack Web Developer</span>
+                    <span class="subtitle-separator">•</span>
+                    <span class="subtitle-item">AI & Software Enthusiast</span>
+                </div>
+                <p class="hero-bio">
+                    I am a passionate Computer Engineering student focused on Full Stack Web Development, Artificial Intelligence applications, problem solving, and building scalable software solutions. I enjoy transforming innovative ideas into real-world projects.
+                </p>
+                <div class="hero-ctas">
+                    <a href="#projects" class="btn btn-primary">
+                        <i data-lucide="briefcase"></i> View Projects
+                    </a>
+                    <a href="https://drive.google.com/file/d/1zSXDfPcrSPvWcmVW1YmSAWW1mpBpWy0e/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="resume-download-btn">
+                        <i data-lucide="download"></i> Download Resume
+                    </a>
+                    <button class="btn btn-accent" id="hero-chat-btn">
+                        <i data-lucide="message-square-code"></i> Chat with AI Assistant
+                    </button>
+                </div>
+            </div>
+            <div class="hero-graphic">
+                <div class="graphic-circle">
+                    <div class="inner-core">🤖</div>
+                    <div class="orbital orbital-1"></div>
+                    <div class="orbital orbital-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="section about-section" id="about">
+            <div class="section-header">
+                <span class="section-tag">Who I Am</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card main-about">
+                    <p>I am currently a <strong>3rd Year Computer Engineering Student</strong> pursuing my Bachelor's degree at <strong>Thakur College of Engineering and Technology (TCET), Mumbai</strong>. My academic journey is fueled by an intense passion for Software Engineering and emerging AI technologies.</p>
+                    <p>I thrive in fast-paced environments, actively participating in hackathons to engineer functional solutions in competitive timelines. I love continuous learning and adapting to modern software stacks.</p>
+                    <div class="goal-box">
+                        <i data-lucide="award"></i>
+                        <div>
+                            <h4>Career Goal</h4>
+                            <p>Become a Software Engineer at a top-tier product-based company, driving impactful tech initiatives.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-card highlights-card">
+                    <h3>Quick Highlights</h3>
+                    <ul class="highlight-list">
+                        <li>
+                            <i data-lucide="map-pin"></i>
+                            <span>Based in Mumbai, Maharashtra</span>
+                        </li>
+                        <li>
+                            <i data-lucide="code-2"></i>
+                            <span>Focused on Full Stack & AI Integrations</span>
+                        </li>
+                        <li>
+                            <i data-lucide="lightbulb"></i>
+                            <span>Strong Problem-Solving & Algorithmic Mindset</span>
+                        </li>
+                        <li>
+                            <i data-lucide="users"></i>
+                            <span>Active Hackathon Participant & Collaborator</span>
+                        </li>
+                        <li>
+                            <i data-lucide="trending-up"></i>
+                            <span>Constantly learning new architectures</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section education-section" id="education">
+            <div class="section-header">
+                <span class="section-tag">Qualifications</span>
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2023 - Present</span>
+                        <h3>Bachelor of Engineering</h3>
+                        <h4>Computer Engineering</h4>
+                        <p class="institute">Thakur College of Engineering and Technology (TCET)</p>
+                        <div class="academic-score">
+                            <span class="score-label">CGPI</span>
+                            <span class="score-value">9.25</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2021 - 2023</span>
+                        <h3>Higher Secondary Certificate (HSC)</h3>
+                        <h4>Science Stream</h4>
+                        <p class="institute">Maharashtra State Board</p>
+                        <div class="academic-score">
+                            <span class="score-label">Percentage</span>
+                            <span class="score-value">78.83%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2020 - 2021</span>
+                        <h3>Secondary School Certificate (SSC)</h3>
+                        <h4>General Education</h4>
+                        <p class="institute">Maharashtra State Board</p>
+                        <div class="academic-score">
+                            <span class="score-label">Percentage</span>
+                            <span class="score-value">78.80%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section skills-section" id="skills">
+            <div class="section-header">
+                <span class="section-tag">What I Work With</span>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category glass-card">
+                    <div class="category-header">
+                        <i data-lucide="binary"></i>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip">C++</span>
+                        <span class="skill-chip">Java</span>
+                        <span class="skill-chip">JavaScript</span>
+                        <span class="skill-chip">Python</span>
+                        <span class="skill-chip">C</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card">
+                    <div class="category-header">
+                        <i data-lucide="layout"></i>
+                        <h3>Web Frontend</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip">HTML5</span>
+                        <span class="skill-chip">CSS3</span>
+                        <span class="skill-chip">Vanilla JS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card">
+                    <div class="category-header">
+                        <i data-lucide="server"></i>
+                        <h3>Web Backend</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip">Python</span>
+                        <span class="skill-chip">Flask</span>
+                        <span class="skill-chip">REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card">
+                    <div class="category-header">
+                        <i data-lucide="database"></i>
+                        <h3>Databases</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip">MongoDB</span>
+                        <span class="skill-chip">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card">
+                    <div class="category-header">
+                        <i data-lucide="wrench"></i>
+                        <h3>Developer Tools</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip">Git</span>
+                        <span class="skill-chip">GitHub</span>
+                        <span class="skill-chip">VS Code</span>
+                        <span class="skill-chip">Postman</span>
+                        <span class="skill-chip">Linux</span>
+                        <span class="skill-chip">MongoDB Atlas</span>
+                        <span class="skill-chip">MongoDB Compass</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card">
+                    <div class="category-header">
+                        <i data-lucide="book-open"></i>
+                        <h3>CS Fundamentals</h3>
+                    </div>
+                    <div class="skill-chips">
+                        <span class="skill-chip">OOP</span>
+                        <span class="skill-chip">DBMS</span>
+                        <span class="skill-chip">Operating Systems</span>
+                        <span class="skill-chip">Computer Networks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="section projects-section" id="projects">
+            <div class="section-header">
+                <span class="section-tag">My Work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- SkillBridge -->
+                <div class="project-card glass-card">
+                    <div class="project-banner">
+                        <i data-lucide="graduation-cap"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>SkillBridge</h3>
+                        <span class="project-type">Placement Preparation Platform</span>
+                        <p>An intelligent web ecosystem designed to streamline placement prep for students.</p>
+                        <ul class="project-features">
+                            <li><i data-lucide="check"></i> Resume Analysis</li>
+                            <li><i data-lucide="check"></i> Placement Readiness Score</li>
+                            <li><i data-lucide="check"></i> Skill Gap Analysis</li>
+                            <li><i data-lucide="check"></i> Roadmaps & DSA Tracker</li>
+                        </ul>
+                        <div class="project-tech" style="margin-bottom: 1.2rem;">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>Tailwind CSS</span>
+                            <span>Gemini API</span>
+                        </div>
+                        <div class="project-links" style="margin-top: auto; display: flex; gap: 0.8rem;">
+                            <a href="https://github.com/pjha91275/SkillBridge" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: var(--radius-sm);">
+                                <i data-lucide="github" style="width: 14px; height: 14px;"></i> Code
+                            </a>
+                            <a href="https://skillbridgehq.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: var(--radius-sm);">
+                                <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quickzy -->
+                <div class="project-card glass-card">
+                    <div class="project-banner">
+                        <i data-lucide="shopping-bag"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Quickzy</h3>
+                        <span class="project-type">Quick Commerce Platform</span>
+                        <p>High-performance quick-commerce web app built for rapid ordering and item delivery.</p>
+                        <ul class="project-features">
+                            <li><i data-lucide="check"></i> Secure Authentication</li>
+                            <li><i data-lucide="check"></i> Cart & Wishlist System</li>
+                            <li><i data-lucide="check"></i> Razorpay Payment Gateway</li>
+                            <li><i data-lucide="check"></i> Admin Product Dashboard</li>
+                        </ul>
+                        <div class="project-tech" style="margin-bottom: 1.2rem;">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>Vanilla JS</span>
+                            <span>NodeJS</span>
+                        </div>
+                        <div class="project-links" style="margin-top: auto; display: flex; gap: 0.8rem;">
+                            <a href="https://github.com/pjha91275/Quickzy" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: var(--radius-sm);">
+                                <i data-lucide="github" style="width: 14px; height: 14px;"></i> Code
+                            </a>
+                            <a href="https://quickzy-zap.vercel.app" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: var(--radius-sm);">
+                                <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Management System -->
+                <div class="project-card glass-card">
+                    <div class="project-banner">
+                        <i data-lucide="file-text"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Blog Management System</h3>
+                        <span class="project-type">Full Stack Blog Platform</span>
+                        <p>A full stack content platform allowing developers to read, write, and render blogs.</p>
+                        <ul class="project-features">
+                            <li><i data-lucide="check"></i> JWT Secure Authentication</li>
+                            <li><i data-lucide="check"></i> Full Blog CRUD Actions</li>
+                            <li><i data-lucide="check"></i> Express Backend</li>
+                            <li><i data-lucide="check"></i> Markdown Blog Rendering</li>
+                        </ul>
+                        <div class="project-tech" style="margin-bottom: 1.2rem;">
+                            <span>Express</span>
+                            <span>MongoDB</span>
+                            <span>NodeJS</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="project-links" style="margin-top: auto; display: flex; gap: 0.8rem;">
+                            <a href="https://github.com/pjha91275/Blog-Management-System" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: var(--radius-sm);">
+                                <i data-lucide="github" style="width: 14px; height: 14px;"></i> Code
+                            </a>
+                            <a href="https://blog-management-system-kns5.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: var(--radius-sm);">
+                                <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EV Charging Platform -->
+                <div class="project-card glass-card">
+                    <div class="project-banner">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>EV Charging Platform</h3>
+                        <span class="project-type">Utility Discovery Platform</span>
+                        <p>Smart booking engine for discovery and reserving slots at nearest EV Charging stations.</p>
+                        <ul class="project-features">
+                            <li><i data-lucide="check"></i> Charging Station Discovery</li>
+                            <li><i data-lucide="check"></i> Live Slot Booking Engine</li>
+                            <li><i data-lucide="check"></i> Intelligent Recommendations</li>
+                            <li><i data-lucide="check"></i> Modern UI/UX Experience</li>
+                        </ul>
+                        <div class="project-tech" style="margin-bottom: 1.2rem;">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>MongoDB</span>
+                            <span>Leaflet Maps</span>
+                        </div>
+                        <div class="project-links" style="margin-top: auto; display: flex; gap: 0.8rem;">
+                            <a href="#" class="btn btn-secondary disabled" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: var(--radius-sm); pointer-events: none; opacity: 0.5;">
+                                <i data-lucide="github" style="width: 14px; height: 14px;"></i> Code
+                            </a>
+                            <a href="#" class="btn btn-primary disabled" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: var(--radius-sm); pointer-events: none; opacity: 0.5;">
+                                <i data-lucide="external-link" style="width: 14px; height: 14px;"></i> Coming Soon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="section achievements-section" id="achievements">
+            <div class="section-header">
+                <span class="section-tag">Milestones</span>
+                <h2 class="section-title">Achievements</h2>
+            </div>
+            <div class="achievements-grid" id="counters-box">
+                <div class="counter-card glass-card">
+                    <div class="counter-icon"><i data-lucide="code"></i></div>
+                    <div class="counter-num" data-target="100">0</div>
+                    <span class="counter-plus">+</span>
+                    <p>DSA Problems Solved</p>
+                </div>
+                <div class="counter-card glass-card">
+                    <div class="counter-icon"><i data-lucide="folder-git-2"></i></div>
+                    <div class="counter-num" data-target="30">0</div>
+                    <span class="counter-plus">+</span>
+                    <p>GitHub Repositories</p>
+                </div>
+                <div class="counter-card glass-card">
+                    <div class="counter-icon"><i data-lucide="git-commit"></i></div>
+                    <div class="counter-num" data-target="550">0</div>
+                    <span class="counter-plus">+</span>
+                    <p>GitHub Commits</p>
+                </div>
+                <div class="counter-card glass-card">
+                    <div class="counter-icon"><i data-lucide="trophy"></i></div>
+                    <div class="counter-num" data-target="10">0</div>
+                    <span class="counter-plus">+</span>
+                    <p>Hackathons Participated</p>
+                </div>
+                <div class="counter-card glass-card full-width-counter">
+                    <div class="counter-icon"><i data-lucide="award"></i></div>
+                    <div class="top-placement-title">Top 8</div>
+                    <p>IEEE Mega Project Finalist</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact-section" id="contact">
+            <div class="section-header">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Contact</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info glass-card">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out for research discussions, freelance collaborations, or job opportunities.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i data-lucide="mail" class="contact-icon"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:pjha91275@gmail.com">pjha91275@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="phone" class="contact-icon"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+919876543210">+91 98765 43210</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="globe" class="contact-icon"></i>
+                            <div>
+                                <h4>Portfolio Website</h4>
+                                <a href="#" target="_blank">princejha.me</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/pjha91275/" target="_blank" aria-label="GitHub"><i data-lucide="github"></i></a>
+                        <a href="https://linkedin.com/in/prince-jha-dev" target="_blank" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container glass-card">
+                    <h3>Send a Message</h3>
+                    <form id="portfolio-contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">Name</label>
+                                <input type="text" id="form-name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email</label>
+                                <input type="email" id="form-email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject">Subject</label>
+                            <input type="text" id="form-subject" placeholder="Collaboration Inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Message</label>
+                            <textarea id="form-message" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Floating Chatbot Widget -->
+    <div class="chatbot-widget-container">
+        <!-- Floating Chat Button -->
+        <button class="chatbot-float-btn" id="chatbot-float-btn" title="Chat with AI Assistant" aria-label="Chat with AI Assistant">
+            <span class="btn-ripple"></span>
+            <i data-lucide="message-square-code"></i>
+        </button>
+
+        <!-- Chat Panel Window -->
+        <div class="chatbot-window glass-card" id="chatbot-window">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-status-avatar">
+                        <span class="status-online"></span>
+                        <i data-lucide="bot" class="header-bot-icon"></i>
+                    </div>
+                    <div>
+                        <h3>Prince's AI Assistant</h3>
+                        <span class="bot-sub">Powered by Gemini AI</span>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="icon-btn" id="settings-toggle" title="Settings Panel" aria-label="Configure Settings">
+                        <i data-lucide="settings"></i>
+                    </button>
+                    <button class="icon-btn" id="clear-chat" title="Clear Chat History" aria-label="Clear Chat">
+                        <i data-lucide="trash-2"></i>
+                    </button>
+                    <button class="icon-btn" id="chatbot-close-btn" title="Close Chat" aria-label="Close Chat">
+                        <i data-lucide="x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Configuration Drawer Inside Chat Widget -->
+            <div class="settings-drawer" id="settings-drawer">
+                <div class="drawer-header">
+                    <h4>Assistant Configurations</h4>
+                    <button class="icon-btn" id="settings-close" aria-label="Close Settings"><i data-lucide="x"></i></button>
+                </div>
+                <div class="drawer-content">
+                    <div class="input-group">
+                        <label for="gemini-key">Google Gemini API Key</label>
+                        <div class="password-input-wrapper">
+                            <input type="password" id="gemini-key" placeholder="Enter Gemini API Key...">
+                            <button class="icon-btn" id="toggle-key-visibility" aria-label="Toggle Password Visibility"><i data-lucide="eye"></i></button>
+                        </div>
+                        <p class="input-hint">Providing a local key overrides the server's `.env` configuration. It is stored securely in your browser's localStorage.</p>
+                    </div>
+                    <div class="status-box" id="key-status-box">
+                        <span class="status-label">AI Execution Mode:</span>
+                        <span class="status-val" id="active-ai-mode">Checking Mode...</span>
+                    </div>
+                    <button class="btn btn-primary" id="save-settings">Save Config</button>
+                </div>
+            </div>
+
+            <!-- Message Area -->
+            <div class="chat-body" id="chat-messages-container">
+                <!-- Welcome Message -->
+                <div class="message bot">
+                    <div class="avatar">🤖</div>
+                    <div class="message-wrapper">
+                        <div class="message-bubble">
+                            Hi! I'm Prince's AI Assistant. Ask me anything about Prince, his projects, skills, education, achievements, or software development.
+                        </div>
+                        <span class="time-stamp">Just now</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggested Quick Prompts -->
+            <div class="quick-prompts-container">
+                <button class="prompt-chip" data-prompt="Tell me about Prince Jha">Tell me about Prince</button>
+                <button class="prompt-chip" data-prompt="What projects has he worked on?">Projects</button>
+                <button class="prompt-chip" data-prompt="What are his core technical skills?">Skills</button>
+                <button class="prompt-chip" data-prompt="What is SkillBridge?">What is SkillBridge?</button>
+            </div>
+
+            <!-- Chat Footer Input Form -->
+            <div class="chat-footer">
+                <form id="chat-form" class="input-form">
+                    <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off" required>
+                    <button type="submit" class="send-btn" id="send-button" aria-label="Send message">
+                        <i data-lucide="send"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- App footer -->
+    <footer class="portfolio-footer">
+        <p>&copy; 2026 Prince Jha. All rights reserved.</p>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
