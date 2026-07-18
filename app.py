@@ -213,9 +213,9 @@ def chat():
                 "3. If the user asks general or programming-related questions unrelated to Prince (e.g., 'What is an Intelligent Agent?' or 'Write a bubble sort in Java'), answer them normally, accurately, and politely, demonstrating high-quality AI capability."
             )
             
-            # Use gemini-2.0-flash for responsive chat sessions
+            # Use gemini-3.5-flash for responsive chat sessions
             model = genai.GenerativeModel(
-                model_name="gemini-2.0-flash",
+                model_name="gemini-3.5-flash",
                 system_instruction=system_instruction
             )
             

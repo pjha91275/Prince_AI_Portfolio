@@ -51,41 +51,56 @@ git clone https://github.com/pjha91275/Prince_AI_Portfolio.git
 cd Prince_AI_Portfolio
 ```
 
-### 2. Setup Virtual Environment
-Run the following commands in the project folder:
-```bash
-# Create virtual environment
+### 2. Setup Virtual Environment & Install Dependencies
+
+Run the following commands in your project folder depending on your operating system:
+
+#### 🖥️ Windows (PowerShell / Command Prompt)
+```powershell
+# 1. Create the virtual environment
 python -m venv .venv
 
-# Activate virtual environment
-# On Windows (PowerShell):
-.venv\Scripts\Activate.ps1
-# On macOS/Linux:
-source .venv/bin/activate
+# 2. Install dependencies (Using the virtual env's pip directly is safest to avoid path conflicts)
+.venv\Scripts\pip install -r requirements.txt
 ```
+> [!TIP]
+> If you wish to activate the virtual environment on Windows PowerShell, run: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` and then `.venv\Scripts\Activate.ps1`. However, running pip/python using `.venv\Scripts\...` directly works without activation!
 
-### 3. Install Dependencies
+#### 🍎 macOS / 🐧 Linux
 ```bash
+# 1. Create the virtual environment
+python3 -m venv .venv
+
+# 2. Activate the virtual environment
+source .venv/bin/activate
+
+# 3. Install dependencies
 pip install -r requirements.txt
 ```
 
-### 4. Configure Gemini API Key
+### 3. Configure Gemini API Key
 To connect the backend to Google Gemini:
 1. Obtain an API key from [Google AI Studio](https://aistudio.google.com/).
 2. Copy `.env.example` to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
+   - On Windows: `copy .env.example .env`
+   - On macOS/Linux: `cp .env.example .env`
 3. Edit `.env` and add your key:
    ```env
-   GEMINI_API_KEY=your_actual_gemini_api_key_here
+   GEMINI_API_KEY=your_gemini_api_key_here
    ```
 
 *(Alternatively, you can test the AI chatbot by pasting your Gemini API Key directly into the **Configurations** drawer inside the chatbot window. The key will be stored locally in your browser's `localStorage`.)*
 
-### 5. Run the Server
+### 4. Run the Server
+
+#### 🖥️ Windows
+```powershell
+.venv\Scripts\python app.py
+```
+
+#### 🍎 macOS / 🐧 Linux
 ```bash
-python app.py
+python3 app.py
 ```
 Open **[http://127.0.0.1:5000](http://127.0.0.1:5000)** in your web browser.
 
